@@ -1,0 +1,266 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #1b1a1a;
+}
+
+/* =============================
+    Basic Layout (>1200px)
+============================= */
+
+/* ===== Navigation Layout ===== */
+
+header {
+    margin: 0;
+    background-color: #dfd7d7;
+    position: fixed;
+    width: 100%;
+    
+}
+
+main {
+    padding-top: 90px;
+}
+
+#website-title {
+    display: flex;
+    padding: 10px
+}
+
+#logo {
+    width: 70px;
+}
+
+#hamburger {
+    display: none;
+}
+
+nav,
+.main-nav {
+    display: flex; 
+}
+
+nav {
+    justify-content: space-between;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.main-nav {
+    align-items: center;
+}
+
+.main-nav li {
+    margin-right: 50px;
+    list-style: none;
+}
+
+.main-nav li a {
+    text-decoration: none;
+    font-size: 1.3em;
+    color: darkolivegreen;
+}
+
+.main-nav li a:hover {
+    cursor: pointer;
+    color: olive;
+}
+
+.main-nav li:first-child a {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+
+
+
+
+/* ===== Intro Content Layout ===== */
+
+.intro{
+    text-align: center;
+    background-color: #7c4848;
+    padding: 10px;
+    color: #fff7f7;
+}
+
+.intro h2,
+.intro h3 {
+    margin: 0;
+}
+
+.intro h2 {
+    letter-spacing: .2em;
+}
+
+.intro h3 {
+    line-height: 3em;
+    text-decoration: underline;
+
+}
+
+.intro p {
+    width: 80%;
+    max-width: 1000px;
+    margin: 10px auto;
+    font-style: italic;
+}
+
+/* ===== Main Content Layout ===== */
+.container {
+    max-width: 1400;
+    margin: 20px auto;
+    
+}
+
+.container h3 {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 1.7em;
+    color: cornsilk;
+}
+
+.sample {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.post {
+    width: 600px;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #fae1c4;
+}
+
+.post img {
+    width: 90%;
+}
+
+.post figcaption {
+    display: inline-block;
+    margin: 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+    font-style: oblique;
+}
+
+.action {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.action button {
+    font-size: 1.3em;
+    background-color: black;
+    color: whitesmoke;
+    border: 1px solid wheat;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.action button:hover {
+    cursor: pointer;
+}
+
+
+/* =============================
+    Media Queries
+============================= */
+
+@media only screen and (max-width: 1200px) {
+    .post {
+        width: 47%;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #website-title h1 {
+        font-size: 1.2rem;
+    }
+
+    #logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    #hamburger {
+        display: unset;
+        width: 40px;
+        height: 40px;
+        align-self: center;
+        margin-right: 50px;
+    }
+
+    header {
+        position:relative;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .post figcaption {
+        font-size: 1em;
+    }
+
+    .container h3 {
+        font-size: 1.3em;
+    }
+
+    main {
+        padding-top: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #website-title h1 {
+        font-size: 1.1rem;
+    }
+
+    #logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    #hamburger {
+        margin-left: 20px;
+    }
+
+    .intro {
+        font-size: .85em;
+    }
+    
+    .post {
+        width: 100%;
+    }
+
+    .post img {
+        width: 70%;
+    }
+
+    .action button {
+        font-size: 1em;
+    }
+
+    .action {
+        margin-top: 2px;
+        margin-bottom: 20px;
+    }
+}
+ 
+
+
+
+
+
