@@ -64,6 +64,10 @@ nav {
     color: darkolivegreen;
 }
 
+.main-nav .exit-btn {
+    display: none;
+}
+
 .main-nav li a:hover {
     cursor: pointer;
     color: olive;
@@ -198,25 +202,52 @@ nav {
         margin-right: 50px;
     }
 
-    header {
-        position:relative;
+    main {
+        padding-top: 73.84px;
     }
 
     .main-nav {
         display: none;
     }
 
-    .post figcaption {
-        font-size: 1em;
+    .show-menu {
+        display: block;
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        background-color: rgba(221, 195, 195, 0.938);
+        padding: 0;
+        margin-top: 73.84px;
+        font-size: .9em;
+    }
+
+    .show-menu li {
+        margin: 15px;
+        margin-top: 0;
+    }
+
+    .show-menu .exit-btn {
+        display: block;
+        margin: 10px 15px 0 auto;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        outline: 0;
+    }
+
+    .show-menu .exit-btn:hover {
+        cursor: pointer;
     }
 
     .container h3 {
         font-size: 1.3em;
     }
 
-    main {
-        padding-top: 0;
+    .post figcaption {
+        font-size: 1em;
     }
+    
 }
 
 @media only screen and (max-width: 500px) {
@@ -231,6 +262,14 @@ nav {
 
     #hamburger {
         margin-left: 20px;
+    }
+
+    .show-menu {
+        margin-top: 69.19px;
+    }
+
+    main {
+        padding-top: 69.19px;
     }
 
     .intro {
