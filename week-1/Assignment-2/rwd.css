@@ -45,7 +45,7 @@ nav,
 
 nav {
     justify-content: space-between;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -74,10 +74,6 @@ nav {
     font-weight: 600;
 }
 
-
-
-
-
 /* ===== Intro Content Layout ===== */
 
 .intro{
@@ -104,14 +100,14 @@ nav {
 
 .intro p {
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 10px auto;
     font-style: italic;
 }
 
 /* ===== Main Content Layout ===== */
 .container {
-    max-width: 1400;
+    max-width: 1200px;
     margin: 20px auto;
     
 }
@@ -130,7 +126,7 @@ nav {
 }
 
 .post {
-    width: 600px;
+    width: 550px;
     margin: 0;
     margin-bottom: 20px;
     padding: 10px 0;
