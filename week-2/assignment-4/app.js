@@ -25,3 +25,24 @@ header.addEventListener('click', event => {
     }
 })
 
+/* ==========================
+Request 3: click to display more sample posts
+========================== */
+const more = document.querySelector('.see-more');
+const hiddenSample = document.querySelector('#hidden-sample')
+// Display and hide hidden content when clicking see more button
+more.addEventListener('click', event => {
+    if (event.target.matches('.more-btn') || event.target.matches('.style-arrow')) {
+        hiddenSample.classList.toggle('no-display');
+        /* button text is 'See More' when content is hidden
+        and is 'See Less' when content is displayed 
+        */
+        const moreButton = more.firstElementChild;
+        if (moreButton.innerText === "See More") {
+            moreButton.innerText = 'See Less';
+        } else {
+            moreButton.innerText = 'See More';
+        }
+    }
+})
+
