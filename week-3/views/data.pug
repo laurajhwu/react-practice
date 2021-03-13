@@ -1,0 +1,20 @@
+extends ./layout/main
+
+block body
+    if number
+        if isInteger
+            h2 Your result is: 
+            each line in result.split('\n')
+                p #{line}
+            a(href="/getData") return
+        else 
+            h2 Wrong Parameter
+            p #{error}
+            a(href="/getData") try again! 
+    else 
+        h1 Lack of Parameter
+        form(action="/getData")
+            label Please enter a number: 
+                input(type="text", name="number")
+            button(type="submit") Enter
+    
