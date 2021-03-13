@@ -2,7 +2,7 @@
 function avg(data) {
     // get the sum of the all product prices
     let sum = 0;
-    data.products.map(item => sum += item.price);
+    data.products.forEach(item => sum += item.price);
     // the average price is the sum of all prices divided by the amount of products
     const average = sum / data.size;
     //display and return average price
