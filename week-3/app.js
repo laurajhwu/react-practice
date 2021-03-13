@@ -7,11 +7,6 @@ const routes = require('./routes');
 //set up template engine
 app.set("view engine", "pug");
 
-//render main page
-app.get('/', (req, res) => {
-    res.render('home');
-})
-
 //get routes
 app.use(routes);
 
