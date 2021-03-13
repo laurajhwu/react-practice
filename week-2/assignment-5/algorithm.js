@@ -9,7 +9,7 @@ function twoSum(nums, target) {
             let currentNumIndex = nums.indexOf(num);
             for (let i = currentNumIndex + 1; i < nums.length; i++) {
                 if (target - num === nums[i]) {
-                    return indices = [currentNumIndex, i];
+                    indices = [currentNumIndex, i];
                 }
             }
         }
