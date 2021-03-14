@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sum HTML</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 </head>
 
 <body>
@@ -25,21 +24,23 @@
 
     <script>
         const form = document.querySelector('form');
+        //make request when user submits a number
         form.addEventListener('submit', event => {
             event.preventDefault();
             const input = document.querySelector('#number');
             const result = document.querySelector('.result');
             axios.get(`http://localhost:3000/getData?number=${input.value}`)
                 .then(res => {
+                    //only retrieve the result information from res.data
                     const resultHTML = res.data.slice(res.data.indexOf('<h2>'), res.data.indexOf('<a'));
                     result.innerHTML = resultHTML;
+                    //empty input 
                     input.value = '';
                 })
                 .catch(error => {
                     throw error;
                 })
         });
-
     </script>
 </body>
 
