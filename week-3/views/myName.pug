@@ -1,0 +1,8 @@
+extends ./layout/main
+
+block body
+    h1 #{name}
+    form(action="/clearName", method="post") 
+        button(type="submit") Enter New Name
+    br
+    a(href="/") Return to Home

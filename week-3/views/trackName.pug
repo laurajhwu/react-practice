@@ -1,0 +1,9 @@
+extends ./layout/main
+
+block body
+    form(action="/trackName", method="post")
+        label Please enter your name: 
+            input(type="text", name="name")
+        button(type="submit") Enter
+    br
+    a(href="/") Return to Home
