@@ -3,36 +3,29 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const { number } = req.query;
-    //check if input number is an integer greater than 0
-    const isInteger = !isNaN(number) && number % 1 === 0 && number > 0;
-    let result = '';
+    //check if input number is a positive integer
+    const isPositiveInt = !isNaN(number) && number % 1 === 0 && number >= 0;
+    let result = 0;
     let error = '';
 
     //check if user input is an integer
-    if (isInteger) {
-        for (let i = 1; i <= number; i++) {
-            if (i === 1) {
-                result += i;
-            } else {
-                result += `+${i}`;
-                //change line for every 30th number
-                if (i % 30 === 0) {
-                    result += '\n';
-                }
-            }
+    if (isPositiveInt) {
+        for (let i = 0; i <= number; i++) {
+            result += i;
         }
     } else {
         //handle error
         if (isNaN(number)) {
             error = `'${number}' is not an integer`
-        } else if (number <= 0) {
-            error = 'Your number should be greater than 0'
-        } else if (number % 1 !== 0) {
+        } else if (number < 0) {
+            error = `Your number should be positive`
+        }
+        else if (number % 1 !== 0) {
             error = `Your number should be a whole number`
         }
     }
     //store all data inside a data object
-    const data = { number, isInteger, result, error };
+    const data = { number, isPositiveInt, result, error };
     //render data page
     res.render('data', data);
 })

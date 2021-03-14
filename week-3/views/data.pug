@@ -2,10 +2,8 @@ extends ./layout/main
 
 block body
     if number
-        if isInteger
-            h2 Your result is: 
-            each line in result.split('\n')
-                p #{line}
+        if isPositiveInt
+            h2 The result is: #{result}
             a(href="/getData") return
         else 
             h2 Wrong Parameter
@@ -17,5 +15,6 @@ block body
             label Please enter a number: 
                 input(type="text", name="number")
             button(type="submit") Enter
+        br
         a(href="/") Return to Home
     
