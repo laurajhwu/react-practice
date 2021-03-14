@@ -7,6 +7,9 @@ const routes = require('./routes');
 //set up template engine
 app.set("view engine", "pug");
 
+//access static files
+app.use(express.static('public'));
+
 //get routes
 app.use(routes);
 

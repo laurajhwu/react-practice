@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum HTML</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <h1>Get the sum!</h1>
+    <form action="#">
+        <label for="number">Enter Your Number Here</label>
+        <input type="text" name="number" id="number">
+        <button type="submit">Enter</button>
+    </form>
+    <div class="result"></div>
+    <br>
+    <a href="http://localhost:3000/sum.html">Start Again</a>
+    <br>
+    <a href="http://localhost:3000">Back to Home</a>
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', event => {
+            event.preventDefault();
+            const input = document.querySelector('#number');
+            const result = document.querySelector('.result');
+            axios.get(`http://localhost:3000/getData?number=${input.value}`)
+                .then(res => {
+                    const resultHTML = res.data.slice(res.data.indexOf('<h2>'), res.data.indexOf('<a'));
+                    result.innerHTML = resultHTML;
+                    input.value = '';
+                })
+                .catch(error => {
+                    throw error;
+                })
+        });
+
+    </script>
+</body>
+
+</html>
