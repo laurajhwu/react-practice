@@ -1,20 +1,16 @@
-extends ./layout/main
-
-block body
-    if number
-        if isPositiveInt
-            h2 The result is: #{result}
-            a(href="/getData") return
-        else 
-            h2 Wrong Parameter
-            p #{error}
-            a(href="/getData") try again! 
+if number
+    if isPositiveInt
+        h2 The result is: #{result}
     else 
-        h1 Lack of Parameter
-        form(action="/getData")
-            label Please enter a number: 
-                input(type="text", name="number")
-            button(type="submit") Enter
-        br
-        a(href="/") Return to Home
+        h2 Wrong Parameter
+        p #{error}
+else 
+    h1 Lack of Parameter
+    form(action="/getData")
+        label Please enter a number: 
+            input(type="text", name="number")
+        button(type="submit") Enter
+    br
+    a(href="/") Return to Home
+
     

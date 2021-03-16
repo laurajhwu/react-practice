@@ -31,9 +31,8 @@
             const result = document.querySelector('.result');
             axios.get(`http://localhost:3000/getData?number=${input.value}`)
                 .then(res => {
-                    //only retrieve the result information from res.data
-                    const resultHTML = res.data.slice(res.data.indexOf('<h2>'), res.data.indexOf('<a'));
-                    result.innerHTML = resultHTML;
+                    //print result from /getData onto page
+                    result.innerHTML = res.data;
                     //empty input 
                     input.value = '';
                 })
