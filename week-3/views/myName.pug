@@ -1,7 +1,14 @@
 extends ./layout/main
 
 block body
-    h1 #{name}
+    if name
+        h1 #{name}
+    else
+        form(action="/trackName", method="post")
+            label Please enter your name: 
+                input(type="text", name="name")
+            button(type="submit") Enter
+    br
     form(action="/clearName", method="post") 
         button(type="submit") Enter New Name
     br
