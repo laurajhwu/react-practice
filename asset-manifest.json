@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/remote-assignments/week-4/assignment-3/static/css/main.e80eaec6.chunk.css",
+    "main.js": "/remote-assignments/week-4/assignment-3/static/js/main.bf844582.chunk.js",
+    "main.js.map": "/remote-assignments/week-4/assignment-3/static/js/main.bf844582.chunk.js.map",
+    "runtime-main.js": "/remote-assignments/week-4/assignment-3/static/js/runtime-main.501ddc2a.js",
+    "runtime-main.js.map": "/remote-assignments/week-4/assignment-3/static/js/runtime-main.501ddc2a.js.map",
+    "static/js/2.3324d395.chunk.js": "/remote-assignments/week-4/assignment-3/static/js/2.3324d395.chunk.js",
+    "static/js/2.3324d395.chunk.js.map": "/remote-assignments/week-4/assignment-3/static/js/2.3324d395.chunk.js.map",
+    "static/js/3.9d86c335.chunk.js": "/remote-assignments/week-4/assignment-3/static/js/3.9d86c335.chunk.js",
+    "static/js/3.9d86c335.chunk.js.map": "/remote-assignments/week-4/assignment-3/static/js/3.9d86c335.chunk.js.map",
+    "index.html": "/remote-assignments/week-4/assignment-3/index.html",
+    "static/css/main.e80eaec6.chunk.css.map": "/remote-assignments/week-4/assignment-3/static/css/main.e80eaec6.chunk.css.map",
+    "static/js/2.3324d395.chunk.js.LICENSE.txt": "/remote-assignments/week-4/assignment-3/static/js/2.3324d395.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.501ddc2a.js",
+    "static/js/2.3324d395.chunk.js",
+    "static/css/main.e80eaec6.chunk.css",
+    "static/js/main.bf844582.chunk.js"
+  ]
+}
