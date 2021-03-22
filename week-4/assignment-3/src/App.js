@@ -1,25 +1,57 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './Header'
+import MainContent from './MainContent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  state = {
+    navigation: [
+      {
+        title: "Home",
+        link: "#"
+      },
+      {
+        title: "About",
+        link: "#"
+      },
+      {
+        title: "Getting Started",
+        link: "#"
+      },
+      {
+        title: "Contact",
+        link: "#"
+      }
+    ]
+  }
+
+  //A method that takes an array of objects and assigns each item a unique ID
+  assignId = (arr, multiple) => {
+    let id = 0;
+    return (
+      arr.map(item => {
+        //for every item the id will increase by 1 times the increase multiple
+        id = (id + 1) * multiple
+        return ({
+          ...item,
+          id
+        })
+      })
+    )
+  }
+
+  render() {
+
+    return (
+      <div className="App" >
+
+        <Header
+          navigation={this.assignId(this.state.navigation, 1)} />
+
+      </div>
+    );
+  }
 }
 
 export default App;
