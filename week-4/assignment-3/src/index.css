@@ -186,7 +186,7 @@ nav {
     margin: 10px;
 }
 
-.see-more:hover, 
+.style-arrow:hover, 
 .more-btn:hover {
     cursor: pointer;
     font-weight: 600;

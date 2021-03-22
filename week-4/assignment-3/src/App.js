@@ -8,6 +8,7 @@ class App extends React.Component {
   state = {
     newMessage: '',
     showMenu: false,
+    displayHiddenPost: false,
     navigation: [
       {
         title: "Home",
@@ -41,14 +42,19 @@ class App extends React.Component {
     return ({ ...item, id });
   })
 
+  //a function to toggle the value of a state
+  toggleState = (prop) => this.setState(prevState => ({ [prop]: !prevState[prop] }));
+
   //change the 'Welcome to NightGram!' to 'Have a Good Time!' when clicked
   changeMessage = () => this.setState({ newMessage: "Have a Good Time!" });
 
   //toggle menu when clicking on hamburger
-  toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
-
+  toggleMenu = () => this.toggleState("showMenu");
   //exit menu when clicking the exit button
   exitMenu = () => this.setState(({ showMenu: false }));
+
+  //toggle the display of hidden posts
+  toggleHiddenPosts = () => this.toggleState("displayHiddenPost")
 
   render() {
 
@@ -64,8 +70,9 @@ class App extends React.Component {
         <MainContent
           assignId={this.assignId}
           changeMessage={this.changeMessage}
-          newMessage={this.state.newMessage} />
-
+          newMessage={this.state.newMessage}
+          toggleHiddenPosts={this.toggleHiddenPosts}
+          displayHiddenPost={this.state.displayHiddenPost} />
 
       </div>
     );

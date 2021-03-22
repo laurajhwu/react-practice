@@ -26,7 +26,10 @@ const Header = props =>
     </header>
 
 Header.propTypes = {
-    navigation: PropTypes.array.isRequired
+    navigation: PropTypes.array.isRequired,
+    exitMenu: PropTypes.func.isRequired,
+    showMenu: PropTypes.bool.isRequired,
+    toggleMenu: PropTypes.func.isRequired
 }
 
 export default Header;

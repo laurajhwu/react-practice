@@ -7,7 +7,8 @@ const MainContent = props =>
     <main>
         <section className="intro">
             <h2 onClick={props.changeMessage}>
-                {props.newMessage ? props.newMessage : "Welcome to NightGram!"} </h2>
+                {props.newMessage ? props.newMessage : "Welcome to NightGram!"}
+            </h2>
             <h3>A place to share your night life</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laboriosam maiores illum ex veritatis
             labore
@@ -21,6 +22,7 @@ const MainContent = props =>
         <div className="container">
             <h3>The Night is Still Young!</h3>
             <section className="sample">
+
                 {/* only display 4 visible posts */}
                 {props.assignId(PostData.slice(0, 4))
                     .map(post =>
@@ -35,11 +37,15 @@ const MainContent = props =>
             </section>
 
             <div className="see-more">
-                <button className="more-btn">See More</button>
-                <div className="style-arrow">></div>
+                <button className="more-btn" onClick={props.toggleHiddenPosts}>
+                    {props.displayHiddenPost ? "Show Less" : "Show More"}
+                </button>
+                <div className="style-arrow" onClick={props.toggleHiddenPosts}>></div>
             </div>
 
-            <section className="sample no-display" id="hidden-sample">
+            <section
+                className={props.displayHiddenPost ? "sample" : "sample no-display"}
+                id="hidden-sample" >
 
                 {props.assignId(PostData.slice(4))
                     .map(post =>
@@ -63,7 +69,9 @@ const MainContent = props =>
 MainContent.propTypes = {
     assignId: PropTypes.func.isRequired,
     changeMessage: PropTypes.func.isRequired,
-    newMessage: PropTypes.string.isRequired
+    newMessage: PropTypes.string.isRequired,
+    toggleHiddenPosts: PropTypes.func.isRequired,
+    displayHiddenPost: PropTypes.bool.isRequired,
 }
 
 export default MainContent;
