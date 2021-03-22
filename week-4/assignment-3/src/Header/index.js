@@ -10,8 +10,8 @@ const Header = props =>
                 <h1>NIGHTGRAM</h1>
             </div>
 
-            <ul className="main-nav">
-                <button className="exit-btn">X</button>
+            <ul className={props.showMenu ? "main-nav show-menu" : "main-nav"} >
+                <button className="exit-btn" onClick={props.exitMenu}>X</button>
                 {props.navigation.map(navbar => {
                     return (
                         <Navbar
@@ -21,7 +21,7 @@ const Header = props =>
                     )
                 })}
             </ul>
-            <img src="images/hamburger.png" id="hamburger" alt="hamburger" />
+            <img src="images/hamburger.png" id="hamburger" alt="hamburger" onClick={props.toggleMenu} />
         </nav>
     </header>
 

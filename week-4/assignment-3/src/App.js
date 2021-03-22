@@ -7,6 +7,7 @@ class App extends React.Component {
 
   state = {
     newMessage: '',
+    showMenu: false,
     navigation: [
       {
         title: "Home",
@@ -43,13 +44,22 @@ class App extends React.Component {
   //change the 'Welcome to NightGram!' to 'Have a Good Time!' when clicked
   changeMessage = () => this.setState({ newMessage: "Have a Good Time!" });
 
+  //toggle menu when clicking on hamburger
+  toggleMenu = () => this.setState(prevState => ({ showMenu: !prevState.showMenu }));
+
+  //exit menu when clicking the exit button
+  exitMenu = () => this.setState(({ showMenu: false }));
+
   render() {
 
     return (
       <div className="App" >
 
         <Header
-          navigation={this.state.navigation} />
+          navigation={this.state.navigation}
+          toggleMenu={this.toggleMenu}
+          showMenu={this.state.showMenu}
+          exitMenu={this.exitMenu} />
 
         <MainContent
           assignId={this.assignId}
