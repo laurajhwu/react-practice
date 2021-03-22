@@ -6,7 +6,8 @@ import PostData from '../data/postData.json'
 const MainContent = props =>
     <main>
         <section className="intro">
-            <h2>Welcome to NightGram!</h2>
+            <h2 onClick={props.changeMessage}>
+                {props.newMessage ? props.newMessage : "Welcome to NightGram!"} </h2>
             <h3>A place to share your night life</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laboriosam maiores illum ex veritatis
             labore
@@ -21,9 +22,10 @@ const MainContent = props =>
             <h3>The Night is Still Young!</h3>
             <section className="sample">
                 {/* only display 4 visible posts */}
-                {props.assignId(PostData.slice(0, 4), 10)
+                {props.assignId(PostData.slice(0, 4))
                     .map(post =>
                         <SamplePost
+                            key={post.id}
                             src={post.image}
                             alt={post.alt}
                             caption={post.caption} />
@@ -39,9 +41,10 @@ const MainContent = props =>
 
             <section className="sample no-display" id="hidden-sample">
 
-                {props.assignId(PostData.slice(4), 100)
+                {props.assignId(PostData.slice(4))
                     .map(post =>
                         <SamplePost
+                            key={post.id}
                             src={post.image}
                             alt={post.alt}
                             caption={post.caption} />
@@ -58,7 +61,9 @@ const MainContent = props =>
     </main>
 
 MainContent.propTypes = {
-    assignId: PropTypes.func.isRequired
+    assignId: PropTypes.func.isRequired,
+    changeMessage: PropTypes.func.isRequired,
+    newMessage: PropTypes.string.isRequired
 }
 
 export default MainContent;

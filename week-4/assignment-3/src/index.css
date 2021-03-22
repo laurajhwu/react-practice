@@ -96,6 +96,10 @@ nav {
     letter-spacing: .2em;
 }
 
+.intro h2:hover {
+    cursor: pointer;
+}
+
 .intro h3 {
     line-height: 3em;
     text-decoration: underline;

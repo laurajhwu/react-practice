@@ -6,6 +6,7 @@ import MainContent from './MainContent'
 class App extends React.Component {
 
   state = {
+    newMessage: '',
     navigation: [
       {
         title: "Home",
@@ -27,19 +28,20 @@ class App extends React.Component {
   }
 
   //A method that takes an array of objects and assigns each item a unique ID
-  assignId = (arr, multiple) => {
-    let id = 0;
-    return (
-      arr.map(item => {
-        //for every item the id will increase by 1 times the increase multiple
-        id = (id + 1) * multiple
-        return ({
-          ...item,
-          id
-        })
-      })
-    )
+  lastId = 0;
+  getNewId = () => {
+    const id = this.lastId;
+    this.lastId++;
+    return id;
   }
+
+  assignId = (arr) => arr.map(item => {
+    const id = this.getNewId();
+    return ({ ...item, id });
+  })
+
+  //change the 'Welcome to NightGram!' to 'Have a Good Time!' when clicked
+  changeMessage = () => this.setState({ newMessage: "Have a Good Time!" });
 
   render() {
 
@@ -47,10 +49,13 @@ class App extends React.Component {
       <div className="App" >
 
         <Header
-          navigation={this.assignId(this.state.navigation, 1)} />
+          navigation={this.state.navigation} />
 
         <MainContent
-          assignId={this.assignId} />
+          assignId={this.assignId}
+          changeMessage={this.changeMessage}
+          newMessage={this.state.newMessage} />
+
 
       </div>
     );
