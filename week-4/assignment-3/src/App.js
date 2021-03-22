@@ -49,6 +49,9 @@ class App extends React.Component {
         <Header
           navigation={this.assignId(this.state.navigation, 1)} />
 
+        <MainContent
+          assignId={this.assignId} />
+
       </div>
     );
   }
